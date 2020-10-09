@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Payslip</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./salary-slip.component.css">
+    <!-- Fonts -->
+    <link type="text/html" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800;600&family=Noto+Sans&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</head>
+<body id="content" #content>
+    <div class="container">
+        <div class="col-lg-12" id="title">
+            <div class="row">
+                <h1 class="company-name">Company Name</h1>
+            </div>
+        </div>
+        <div class="body">
+            <div class="container employee">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="col-lg-12 title" >Salary Slip</h3>
+                        <!-- <ng-container *ngFor="let details of EmployeeDetails">
+                            <tr>
+                                <td>Sample: {{details.$value}}</td>
+                            </tr>
+                        </ng-container> -->
+                        <div *ngIf="EmployeeDetails">
+                        <ul class ="eDetails">
+                            <li><span><b>Employee Name:</b></span> <span class="details">{{EmployeeDetails.EmployeeName}}</span></li>
+                            <li><span><b>Employee ID:</b></span><span class="details">{{EmployeeDetails.EmployeeID}}</span></li>
+                            <li><span><b>Designation:</b></span><span class="details">{{EmployeeDetails.Designation}}</span></li>
+                            <li><span><b>Month:</b></span><span class="details">{{EmployeeDetails.Month}}</span>
+                                <span class="year"><b>Year:</b><span class="details year">{{EmployeeDetails.Year}}</span></span></li>
+                            <li id="date"><span><b>Date:</b></span></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
+            <div class="container-fluid">
+                <table *ngIf="Payroll" class="table table-bordered col-lg-12">
+                    <thead>
+                        <tr>
+                            <th scope="col">Earnings</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Basic</td>
+                            <td class="table-data" >{{Payroll.Basic}}</td>
+                        </tr>
+                        <tr>
+                            <td>HRA</td>
+                            <td class="table-data">{{Payroll.Hra}}</td>
+                        </tr>
+                        <tr>
+                            <td>Medical Allowance</td>
+                            <td class="table-data">{{Payroll.MedicalAllowance}}</td>
+                        </tr>
+                        <tr>
+                            <td>Conveyance Allowance</td>
+                            <td class="table-data">{{Payroll.ConveyanceAllowance}}</td>
+                        </tr>
+                        <tr>
+                            <td>Internet & Telephony Reimbursement</td>
+                            <td class="table-data">{{Payroll.InternetTelephonyReimbursement}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container-fluid">
+                <table *ngIf="Payroll" class="table table-bordered col-lg-12">
+                    <thead>
+                        <tr>
+                            <th scope="col">Deductions</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Provident Fund</td>
+                            <td class="table-data">{{Payroll.ProvidentFund}}</td>
+                        </tr>
+                        <tr>
+                            <td>Professional Tax</td>
+                            <td class="table-data">{{Payroll.ProfessionalTax}}</td>
+                        </tr>
+                        <tr>
+                            <td id="table-data">Net Amount</td>
+                            <td id="table-data" class="table-data">{{Payroll.NetAmount}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="BankDetails" class="otherDetails">
+                <p class="details"><span><b>In Words:</b></span>{{BankDetails.InWords}}</p>
+                <br><br>
+                <p class="details"><span><b>Ref No:</b> </span>{{BankDetails.RefNo}}</p>
+                <p class="details"><span><b>Payment Transfer Date:</b> </span>{{BankDetails.PaymentTransferDate}}</p>
+                <br><br><br>
+                <p><span><b>Signature of the Employee</b></span></p>
+                <div id="bankname">
+                    <p class="details"><span><b>Name of the Bank:</b></span>{{BankDetails.BankName}}</p>
+                    <p><span><b>Director:</b></span></p>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-outline-dark btn-lg" (click)="download()">Download</button>
+    </div>
+    <script src="" async defer></script><br><br><br>
+</body>
+</html>

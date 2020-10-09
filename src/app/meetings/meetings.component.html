@@ -1,0 +1,172 @@
+<div class="topnav">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/leaves">Request Leave</a>
+    <a routerLink="/meetings">Meetings</a>
+    <a routerLink="/files">Reimbursement</a>
+    
+  </div>
+<div class="text">
+<h1>Book your time</h1>
+<h3>.....And send in an invite</h3>
+<h4>Raise a token incase of any troubles</h4>
+</div>
+  
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+         
+        <form #postForm="ngForm" (ngSubmit)="onCreatePost(postForm.value)">
+        <div class="box">
+
+          <div class="form-group">
+            <label style="position: relative; top: 20px; left: 15px; font-size: larger;" for="email">Host Email</label>
+            <input
+              style="position: relative; top: 20px; left: 48px; width: 300px; font-size: larger;  border-radius:10px;  background-color:#f1f0ee ;"
+              class="form-control"
+              id="email"
+              required
+              ngModel
+              name="email"
+            >
+          </div>
+
+
+
+
+
+
+
+            <div class="form-group">
+            <label style="position: relative; top: 30px; left: 15px; font-size: larger;" for="ID">Meetings ID</label>
+            <input
+              style="position: relative; top: 30px; left: 35px; width: 300px; font-size: larger;  border-radius:10px;  background-color:#f1f0ee ;"
+              class="form-control"
+              id="ID"
+              required
+              ngModel
+              name="ID"
+            >
+          </div>
+
+
+
+
+
+          <div class="form-group">
+            <label style="position: relative; top: 40px; left: 15px; font-size: larger;" for="title">Meeting</label>
+            <input 
+            style="position: relative; top: 40px; left: 68px; width: 300px; font-size: larger;  border-radius:10px;  background-color:#f1f0ee ;"
+              type="text"
+              class="form-control"
+              id="title"
+              required
+              ngModel
+              name="title"
+            />
+          </div>
+
+
+          <div class="form-group">
+            <label style="position: relative; top: 10px; left: 15px; font-size: larger;" for="content">Description</label>
+            <textarea
+              style="position: relative; top: 60px; left: 35px; height: 100px; width: 400px;  border-radius:10px; background-color:#f1f0ee ;"
+              class="form-control"
+              id="content"
+              required
+              ngModel
+              name="content"
+            ></textarea>
+          </div>
+
+
+          <button
+            style="position: relative; top: 90px; left: 200px; height: 50px; background-color: #77dd77;
+            color: white;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            height: 47px;
+            width: 150px;
+            font-family:inherit;
+            font-size: inherit;"  
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!postForm.valid">
+            Record Meeting
+          </button>
+
+        </div>
+        </form>
+      </div>
+    </div>
+
+ 
+
+    <div class="bottom" style="position: absolute; top: 350px; left: 30px;">
+
+    <hr />
+
+    <div class="bottom">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <button 
+          style="background-color: #77dd77; position: absolute;top: 60px;left: 90px;  
+          color: white;
+          padding: 10px 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          height: 47px;
+          width: 150px;
+          font-family:inherit;
+          font-size: inherit;"   
+          class="btn btn-primary" (click)="onFetchPosts()">
+          Request Meetings
+        </button>
+        
+        <button
+          style="background-color: #ff6961; position: absolute;top: 60px; left:290px;  
+          color: white;
+          padding: 10px 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          height: 47px;
+          width: 150px;
+          font-family:inherit;
+          font-size: inherit;"   
+
+          class="btn btn-danger"
+          (click)="onClearPosts()">
+          Cancel Meetings
+        </button>
+      </div>
+
+    </div>
+
+    <div class="bottom">
+      <div class="load">
+        <p style="position: absolute; top:100px;left: 80px;"  *ngIf ="LoadedPosts.length < 1">No meetings schelduled!</p>
+
+        <ul style="position: relative; top:50px"
+        class="list-group" *ngIf = "LoadedPosts.length >= 1">
+            <li class="list-group-item" *ngFor = "let posts of LoadedPosts">
+                
+                <h3>{{posts.title}}</h3>
+                <p>{{posts.content}}</p>
+
+            </li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <img src="https://webstockreview.net/images/meeting-clipart-9.jpg" height="300px" width="400px" style="position: absolute; left: 1150px;">
+  
+
+
+

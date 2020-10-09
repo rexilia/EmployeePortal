@@ -1,0 +1,67 @@
+<div class="topnav">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/leaves">Request Leave</a>
+    <a routerLink="/meetings">Meetings</a>
+    <a routerLink="/files">Reimbursement</a>
+  </div>
+
+<!--<div class="container">
+
+<h2>File Upload</h2>
+<input type="text" placeholder="Save with Key" name="id" [(ngModel)]="id">
+<br><br>
+<input type="file" (change)="showPreview($event)">
+<button (click)="save()">Save</button>
+<h2>File View</h2>
+<input type="text" name="file" [(ngModel)]="file" placeholder="Enter Unique Search Key">
+<button (click)="view()">View</button>
+
+</div>-->
+
+
+<div class="form-style-10">
+    <h1>Reimbursement Form<span>Ensure you upload the files as per requirement</span></h1>
+
+    <form>
+        <div class="section"><span>1</span>Reimbursement Key</div>
+        <div class="inner-wrap">
+            <input type="text" placeholder="Save with Key" name="id" [(ngModel)]="id">
+            <br><br>
+        <input style="font-size:large;" type="file" (change)="showPreview($event)">
+        <button style="position: relative; top: 10px; left: 120px;
+        height: 50px; background-color: #77dd77;
+        color: white;
+        padding: 10px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        height: 47px;
+        width: 150px;
+        font-family:inherit;
+        font-size: inherit;"
+        (click)="save()">Save</button>
+            
+        </div>
+    
+        <div class="section"><span>2</span>File View</div>
+        <div class="inner-wrap">
+            <input type="text" name="file" [(ngModel)]="file" placeholder="Enter Unique Search Key">
+            <button 
+            style ="position: relative; top: 25px; left: 460px; 
+            height: 50px; background-color: #77dd77;
+            color: white;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            height: 47px;
+            width: 150px;
+            font-family:inherit;
+            font-size: inherit;"
+            (click)="view()">View</button>
+            
+        </div>
+    
+
+    </form>
+    </div>

@@ -1,0 +1,61 @@
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 1815px;
+    
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: x-large;
+    position: relative;
+    left: 1200px;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.text{
+    position: absolute;
+    left: 260px;
+    top: 300px;
+}
+
+.text2{
+    position: absolute;
+    left:320px;
+    top: 350px;
+
+}
+
+.text3{
+    position: absolute;
+    left: 460px;
+    top:390px;
+}
+
+
+
+
+
+
+
+.image{
+    position: absolute;
+    left: 920px;
+    top: 70px;
+    
+}

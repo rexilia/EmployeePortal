@@ -1,0 +1,95 @@
+.container {
+    position: relative;
+    top: 1rem;
+}
+.body {
+    background-color: #F3F0F0;
+    padding: 2% 3% 2%;
+    border-radius: 10px;
+    margin: 2rem auto;
+}
+#title {
+    background-color:  #F3F0F0;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 2rem;
+}
+.company-name {
+    color: teal;
+    position: relative;
+    left: 2rem;
+    font-weight: 800;
+}
+h3 {
+    color:rgb(56, 56, 56);
+    text-align: center;
+    font-weight: bold;
+    font-family: serif;
+}
+.employee {
+    text-align: start;
+    line-height: 2;
+    word-spacing: 1rem;
+}
+.year {
+    float:right;
+}
+#date {
+    position: absolute;
+    left: 80%;
+    top: 5%;
+}
+.eDetails {
+    text-align: justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ul {
+    display: inline-block;
+    list-style: none;
+}
+.details {
+    font-family: "verdana", sans-serif;
+    font-weight: 500;
+    padding-left: 1rem;
+    word-spacing: 1rem;
+}
+.table {
+    table-layout: fixed;
+    border-width: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+thead {
+    text-align: center;
+}
+tbody {
+    font-weight: 500;
+}
+.table-data {
+    text-align: center;
+}
+#table-data {
+    font-size: larger;
+    font-family: "Montserrat",sans-serif;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+.otherDetails {
+    padding: 1rem 0rem 0rem 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+}
+#bankname {
+    position: relative;
+    bottom: 5rem;
+    right: 10rem;
+    float: right;
+}
+button {
+    position: relative;
+    top: 1rem;
+    left: 80%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+}

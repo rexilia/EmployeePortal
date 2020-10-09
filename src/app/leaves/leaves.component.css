@@ -1,0 +1,76 @@
+input.ng-invalid.ng-touched{
+    border: 1px solid gray;
+  }
+  
+  
+  .box{
+  
+      height: 550px;
+      width: 600px;
+      border-radius: 5px;
+      border: #12343b solid 2px;
+      position: absolute;
+      left: 990px;
+      top: 150px;
+      padding: 20px 40px;
+      border-radius: 15px 15px 15px 15px;
+    
+      
+      
+    }
+  
+   
+  .container {
+      margin-top: 5px;
+    }
+    
+    .row {
+      margin: 20px 0;
+    }
+
+  
+
+    .topnav {
+      background-color:#12343b;
+      overflow: hidden;
+      height: 70px;
+     
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 25px;
+      position: relative;
+      left: 90px;
+    }
+    
+  
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  
+    .topnav a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+ .msg{
+
+   
+   position: absolute;
+   left: 830px;
+   top: 70px;
+   border-radius: 15px 15px 15px 15px;
+  
+ }
+
+ .text{
+   position: absolute;
+   left: 150px;
+   top: 250px;
+ }

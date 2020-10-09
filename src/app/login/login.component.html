@@ -1,0 +1,120 @@
+
+<ul>
+ 
+  
+  <li><a class="active" href="">Home</a></li>
+  <li><a href="https://www.youtube.com/">News</a></li>
+  <li><a href="https://www.youtube.com/">Contact</a></li>
+  <li><a href="https://www.youtube.com/">About</a></li>
+  <li><a href="https://www.youtube.com/">Careers</a></li>
+  <li><a href="/admin">Admin</a></li>
+</ul>
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+  <div class = "alert alert-danger" *ngIf="error">
+  <p> {{error}} </p>
+  </div>
+    </div>
+
+    <form class = "box" #LoginForm = "ngForm" (ngSubmit)="onSubmit(LoginForm)">
+      <div class="form-group">
+        <label for="email">E-mail ID: </label>
+        <input
+          style="width: 220px;
+          position: relative; font-size: x-large;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+         
+          type="email"
+          id="email"
+          class="form-control"
+          ngModel
+          name="email"
+          required
+          email
+        />
+      </div>
+
+      <br>
+
+
+      <div class="form-group">
+        <label for="password">Password: </label>
+        <input
+          style="width: 220px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+          font-size: x-large;"
+          type="password"
+          id="password"
+          class="form-control"
+          ngModel
+          name="password"
+          required
+          minlength="6"
+        />
+      </div>
+
+      <br>
+
+
+
+     <div class= "button"> 
+        <button
+          style="font-size: 150%;
+          border: none; 
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 10px;
+        
+          border-radius: 4px;
+          cursor: pointer;
+          height: 47px;
+          width: 270px;
+          font-family:inherit;
+          font-size: inherit;"   
+          
+          type="submit"
+          [disabled]="!LoginForm.valid">
+          {{ isLoginMode ? 'Login' : 'Sign Up' }}
+        </button>
+
+        <br>
+
+        <button
+         style="font-size: 150%;
+          position: relative;
+          top: 20px;
+    
+          font-size: 150%;
+          border: none; 
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          height: 47px;
+          width: 270px;
+          font-family:inherit;
+          font-size: inherit;" 
+
+         (click)="onSwitchMode()" type="button">
+          Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+        </button>
+      </div>
+      
+
+
+    </form>
+  </div>
+
+  <img src="https://i.pinimg.com/originals/5f/26/fb/5f26fb23871a37d558b5d06700340444.jpg" height="450px" width="400px" style="position: absolute;top: 350px; left: 1300px;">
+
+
