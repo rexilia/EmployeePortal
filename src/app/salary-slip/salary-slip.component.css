@@ -33,13 +33,15 @@ h3 {
     line-height: 2;
     word-spacing: 1rem;
 }
-.year {
+#year {
+    position: relative;
+    right:8rem;
     float:right;
 }
 #date {
     position: absolute;
     left: 80%;
-    top: 5%;
+    top: 29%;
 }
 .eDetails {
     text-align: justify;
@@ -53,7 +55,7 @@ ul {
     font-family: "verdana", sans-serif;
     font-weight: 500;
     padding-left: 1rem;
-    word-spacing: 1rem;
+    letter-spacing: 2px;
 }
 .table {
     table-layout: fixed;
@@ -69,8 +71,8 @@ tbody {
 .table-data {
     text-align: center;
 }
-#table-data {
-    font-size: larger;
+#Net {
+    font-size: 20px;
     font-family: "Montserrat",sans-serif;
     font-weight: bolder;
     letter-spacing: 2px;
@@ -81,10 +83,10 @@ tbody {
     font-weight: 600;
 }
 #bankname {
-    position: relative;
-    bottom: 5rem;
+    text-align: left;
+    position: absolute;
+    bottom: 1rem;
     right: 10rem;
-    float: right;
 }
 button {
     position: relative;
@@ -93,3 +95,32 @@ button {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 200;
 }
+
+
+.topnav {
+    background-color: #12343b;
+    overflow: hidden;
+    height: 70px;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    position: relative;
+    left: 90px;
+  }
+  
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }

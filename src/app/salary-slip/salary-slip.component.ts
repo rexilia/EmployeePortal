@@ -1,7 +1,15 @@
-import { element } from 'protractor';
-import { AngularFireDatabase } from '@angular/fire/database';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { jsPDF } from 'jspdf';
+import {
+  AngularFireDatabase
+} from '@angular/fire/database';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
+import {
+  jsPDF
+} from 'jspdf';
 import html2canvas from 'html2canvas';
 @Component({
   selector: 'app-salary-slip',
@@ -15,51 +23,31 @@ export class SalarySlipComponent implements OnInit {
       console.log(canvas);
       var imgData = canvas.toDataURL('image/png');
       var doc = new jsPDF();
-      doc.addImage(imgData,0,0,208,500);
+      doc.addImage(imgData, 0, 0, 208, 298);
       doc.save("Salary-Slip.pdf");
     })
   }
-  //constructor(public PayrollService: PayrollService) { }
-//   @ViewChild('content') content: ElementRef;
-//   public downloadPdf(){
-// let doc = new jspdf();
-// let specialElementHandlers = {
-//   '#editor': function(element, renderer) {
-//     return true;
-//   }
-// };
-// let content = this.content.nativeElement;
-// doc.fromHTML(content.innerHTML, 10, 10, {
-// 'width':190,
-// 'elementHandlers': specialElementHandlers
-// });
-// doc.save('Salary-Slip.pdf');
-//   }
-  EmployeeDetails:any = [];
-  BankDetails:any = [];
-  Payroll:any = [];
+  EmployeeDetails: any = [];
+  BankDetails: any = [];
+  Payroll: any = [];
+  employees: any = [];
   constructor(db: AngularFireDatabase) {
-        db.object('/EmployeeDetails').valueChanges().subscribe(EmployeeDetails => {
-          this.EmployeeDetails = EmployeeDetails;
-          console.log(this.EmployeeDetails);
-        })
-        db.object('/BankDetails').valueChanges().subscribe(BankDetails => {
-          this.BankDetails = BankDetails;
-          console.log(this.BankDetails);
-        })
-        db.object('/Payroll').valueChanges().subscribe(Payroll => {
-          this.Payroll = Payroll;
-          console.log(this.Payroll);
-        })
+    db.object('/EmployeeDetails').valueChanges().subscribe(EmployeeDetails => {
+      this.EmployeeDetails = EmployeeDetails;
+      console.log(this.EmployeeDetails);
+    })
+    db.object('/BankDetails').valueChanges().subscribe(BankDetails => {
+      this.BankDetails = BankDetails;
+      console.log(this.BankDetails);
+    })
+    db.object('/Payroll').valueChanges().subscribe(Payroll => {
+      this.Payroll = Payroll;
+      console.log(this.Payroll);
+    })
+    db.list('/employees').valueChanges().subscribe(employees => {
+      this.employees = employees;
+      console.log(this.employees);
+    })
   }
-  ngOnInit():void { }
-  //   this.PayrollService.getData().subscribe(
-  //     list => {
-  //       this.EmployeeDetails = list.map(item => {
-  //         return {
-  //           ...item.payload.val()
-  //         };
-  //       });console.log(this.EmployeeDetails);
-  //     });
-  // }
+  ngOnInit(): void {}
 }

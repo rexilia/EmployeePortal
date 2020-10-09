@@ -24,6 +24,17 @@
     </script>
 </head>
 <body id="content" #content>
+
+    <div class="topnav">
+        <a routerLink="/home">Home</a>
+        <a routerLink="/leaves">Request Leave</a>
+        <a routerLink="/meetings">Meetings</a>
+        <a routerLink="/files">Reimbursement</a>
+        <a routerLink="/salaryslip">Pay Slips</a>
+      
+        
+      </div>
+
     <div class="container">
         <div class="col-lg-12" id="title">
             <div class="row">
@@ -34,20 +45,20 @@
             <div class="container employee">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h3 class="col-lg-12 title" >Salary Slip</h3>
+                        <h3 class="col-lg-12 title" >Salary Slip</h3><br>
                         <!-- <ng-container *ngFor="let details of EmployeeDetails">
                             <tr>
                                 <td>Sample: {{details.$value}}</td>
                             </tr>
                         </ng-container> -->
-                        <div *ngIf="EmployeeDetails">
-                        <ul class ="eDetails">
-                            <li><span><b>Employee Name:</b></span> <span class="details">{{EmployeeDetails.EmployeeName}}</span></li>
-                            <li><span><b>Employee ID:</b></span><span class="details">{{EmployeeDetails.EmployeeID}}</span></li>
+                        <div *ngIf="EmployeeDetails" >
+                        <ul  class ="eDetails">
+                            <li><span><b>Employee Name:</b></span> <span class="details">{{EmployeeDetails.EmpName}}</span></li>
+                            <li><span><b>Employee ID:</b></span><span class="details">{{EmployeeDetails.EmpId}}</span></li>
                             <li><span><b>Designation:</b></span><span class="details">{{EmployeeDetails.Designation}}</span></li>
                             <li><span><b>Month:</b></span><span class="details">{{EmployeeDetails.Month}}</span>
-                                <span class="year"><b>Year:</b><span class="details year">{{EmployeeDetails.Year}}</span></span></li>
-                            <li id="date"><span><b>Date:</b></span></li>
+                                <span id="year"><b>Year:</b><span class="details">{{EmployeeDetails.Year}}</span></span></li>
+                            <li id="date"><span><b>Date:</b></span>{{EmployeeDetails.Date}}</li>
                         </ul>
                         </div>
                     </div>
@@ -102,28 +113,29 @@
                             <td>Professional Tax</td>
                             <td class="table-data">{{Payroll.ProfessionalTax}}</td>
                         </tr>
-                        <tr>
-                            <td id="table-data">Net Amount</td>
-                            <td id="table-data" class="table-data">{{Payroll.NetAmount}}</td>
+                        <tr id="Net">
+                            <td>Net Amount</td>
+                            <td class="table-data">{{Payroll.NetAmount}}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div *ngIf="BankDetails" class="otherDetails">
-                <p class="details"><span><b>In Words:</b></span>{{BankDetails.InWords}}</p>
+<div class="container-fluid">
+    <div class="row">
+            <div *ngIf="BankDetails" class="col-lg-12 otherDetails">
+                <p ><b>In Words:</b><span class="details">{{BankDetails.InWords}}</span></p>
                 <br><br>
-                <p class="details"><span><b>Ref No:</b> </span>{{BankDetails.RefNo}}</p>
-                <p class="details"><span><b>Payment Transfer Date:</b> </span>{{BankDetails.PaymentTransferDate}}</p>
+                <p><b>Ref No:</b> <span class="details">{{BankDetails.RefNo}}</span></p>
+                <p><b>Payment Transfer Date:</b> <span class="details">{{BankDetails.PaymentTransferDate}}</span></p>
                 <br><br><br>
-                <p><span><b>Signature of the Employee</b></span></p>
+                <p><span><b>Signature of the Employee</b></span></p><br><br>
                 <div id="bankname">
-                    <p class="details"><span><b>Name of the Bank:</b></span>{{BankDetails.BankName}}</p>
-                    <p><span><b>Director:</b></span></p>
+                    <p><b>Name of the Bank:</b> <span class="details">{{BankDetails.BankName}}</span></p>
+                    <p><span><b>Director:</b></span></p><br>
                 </div>
             </div>
-        </div>
+        </div></div></div></div>
         <button class="btn btn-outline-dark btn-lg" (click)="download()">Download</button>
-    </div>
-    <script src="" async defer></script><br><br><br>
+    <br><br><br>
 </body>
 </html>

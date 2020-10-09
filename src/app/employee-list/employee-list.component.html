@@ -1,31 +1,15 @@
 <body>
-    <div class="title-bar">
-    </div>
-    <h2 style="text-align:center;font-family: Arial;">The Team</h2>
-    <button class="add-button" id="split">Add Employee</button>
-    <div class="card">
-        <img src="" id="image">
-        <h1 id="name">Troye Sivan</h1>
-        <div style="margin: 24px 0;">
-        </div>
-        <!--<mat-accordion> 
-        <mat-expansion-panel hideToggle>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                View More
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <p>content of the panel.</p>
-          </mat-expansion-panel> 
-        </mat-accordion>-->
-    </div>
-    </body>
-    <!--
-        <div class="view">
-            <button type="button" class="collapsible">View More</button>
-            <div class="content">
-                <p id="title">Title</p>
-                <p id="place">Place</p>
-            </div>
-        </div>
-    -->
+  <div class="title-bar">
+    <a routerLink="/employeeadd">Add Employee</a>
+  </div>
+  <h2 style="text-align:center;font-family: Arial;font-size: 30px;">The Team</h2>
+    <div *ngFor="let employee of employeeArray;">
+  <div class="card">
+      <img src="{{ employee.url }}" id="image">
+      <h1 id="name">{{ employee.name }}</h1>
+      <h2 style="color: gray;">{{employee.title }}</h2>
+      <div style="margin: 24px 0;">
+      </div>
+  </div>
+  </div>
+  </body>
