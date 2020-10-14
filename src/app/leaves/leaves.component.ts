@@ -10,7 +10,7 @@ import { ViewChild } from '@angular/core';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import {AuthResponseData, AuthService } from '../login/auth.service';
+
 
 
 interface Reason {
@@ -37,8 +37,7 @@ export class LeavesComponent implements OnInit {
 
   constructor(private http: HttpClient,
     private afAuth: AngularFireAuth,
-    private db: AngularFirestore,
-    private authService: AuthService) { }
+    private db: AngularFirestore) { }
 
   ngOnInit(): void {
   }

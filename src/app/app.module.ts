@@ -12,10 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { from } from 'rxjs';
 import { LeavesComponent } from './leaves/leaves.component';
-import { MeetingsComponent } from './meetings/meetings.component'; 
-import { AuthService } from './login/auth.service';
+
 import { FilesComponent } from './files/files.component';
-import { RemComponent } from './rem/rem.component';
+
 import { MainComponent } from './main/main.component';
 import { AdminComponent } from './admin/admin.component';
 
@@ -36,9 +35,7 @@ import { environment } from 'src/environments/environment';
     LoginComponent,
     HomeComponent,
     LeavesComponent,
-    MeetingsComponent,
     FilesComponent,
-    RemComponent,
     MainComponent,
     AdminComponent,
     EmployeeAddComponent,
@@ -52,14 +49,7 @@ import { environment } from 'src/environments/environment';
     HttpClientModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
-    
-    
-  
-    
-
-  
     BrowserAnimationsModule,
-
     AngularFireModule,
     //AngularFirestore,
     AngularFireModule.initializeApp({
@@ -74,7 +64,7 @@ import { environment } from 'src/environments/environment';
     },
     )
   ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

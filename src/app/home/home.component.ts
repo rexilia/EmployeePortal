@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../login/auth.service';
+import { AuthService } from '../auth.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ViewChild } from '@angular/core';
@@ -9,7 +9,8 @@ import { ViewChild } from '@angular/core';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-
+import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 import {Post} from './post.model';
 import { map } from 'rxjs/Operators';
 
@@ -22,6 +23,7 @@ import { map } from 'rxjs/Operators';
 export class HomeComponent implements OnInit, OnDestroy {
 
   @ViewChild('postForm') leaveform: NgForm;
+  currentUser: Observable<firebase.User>;
 
   LoadedPosts: Post[] = []
 
@@ -40,15 +42,15 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.userSub = this.authService.user.subscribe(user => {
+    /*this.userSub = this.authService.user.subscribe(user => {
       this.email = user.email;
       this.isAuthenticated = !!user;
       console.log(!user);
       console.log(!!user);
       console.log("email",user.email)
+    }*/
+    //)
     }
-    
-    )}
 
   
     onCreatePost(postData: {fname: string; email: string; campus: string; complaint: string;}) {
@@ -83,7 +85,11 @@ export class HomeComponent implements OnInit, OnDestroy {
       })
     }
 
-
+  getId(){
+    this.authService.currentUser.pipe(take(1)).subscribe((val) => {
+      console.log(val.uid);
+    })
+  }
 
 
   onLogout(){
